@@ -63,11 +63,7 @@ const musicCatalog = () => {
     for (let i = 0;i < playlists.length; i++){
       if(playlistName==playlists[i].name){
         playlists[i].songs.push({title:song.title,artist:song.artist,genre:song.genre, duration:song.duration,favorite:false })
-      }
-    }
-
-
-  };
+      } } };
 
   /**
    * Removes a song from a specific playlist.
@@ -75,14 +71,38 @@ const musicCatalog = () => {
    * @param {string} title - The title of the song to remove.
    * @throws {Error} If the playlist or song is not found.
    */
-  const removeSongFromPlaylist = (playlistName, title) => {};
+  const removeSongFromPlaylist = (playlistName, title) => {
+    for (let i = 0;i < playlists.length; i++){
+      if(playlistName==playlists[i].name){
+        let newSongs = playlists[i].songs.filter(song => song.title != title);
+        playlists[i].songs=newSongs        
+      }   }   
+  };
 
   /**
    * Marks a song as a favorite or removes the favorite status.
    * @param {string} playlistName - The name of the playlist containing the song.
    * @param {string} title - The title of the song to mark as a favorite.
    */
-  const favoriteSong = (playlistName, title) => {};
+  const favoriteSong = (playlistName, title) => {
+    for (let i = 0;i < playlists.length; i++){
+
+      if(playlistName==playlists[i].name){
+
+        for (let index = 0; index < playlists[i].songs.length; index++){
+
+          if(playlists[i].songs[index].title===title){
+
+            if (playlists[index].songs[index].favorite==true){
+               playlists[index].songs[index].favorite=false}
+              
+            else if (playlists[index].songs[index].favorite==false){
+                playlists[index].songs[index].favorite=true
+            
+            
+            }}}}  
+  };
+  };
 
   /**
    * Sorts songs in a specific playlist by a given criterion (title, artist, or duration).
