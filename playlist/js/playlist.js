@@ -47,12 +47,10 @@ const musicCatalog = () => {
    * @param {string} playlistName - The name of the playlist to remove.
    */
     const removePlaylist = (playlistName) => {
-      let newPlaylist=[]
-      for (let i; playlists.length;i++){
-        if (i.name!=playlistName){
-          newPlaylist.push(i)
-        }}
-      playlists=newPlaylist
+      let newPlaylist = playlists.filter( function(playlist){
+        return playlist.name != playlistName
+      })
+      playlists = newPlaylist
     };
 
   /**
@@ -62,6 +60,12 @@ const musicCatalog = () => {
    * @throws {Error} If the playlist is not found.
    */
   const addSongToPlaylist = (playlistName, song) => {
+    for (let i = 0;i < playlists.length; i++){
+      if(playlistName==playlists[i].name){
+        playlists[i].songs.push({title:song.title,artist:song.artist,genre:song.genre, duration:song.duration,favorite:false })
+      }
+    }
+
 
   };
 
