@@ -30,7 +30,7 @@ const musicCatalog = () => {
   const createPlaylist = (playlistName) => {
     const playlist = {
       name: playlistName,
-      songList: []
+      songs: []
     }; playlists.push(playlist)
     };
 
@@ -61,7 +61,9 @@ const musicCatalog = () => {
    * @param {{ title: string, artist: string, genre: string, duration: number }} song - The song to add to the playlist.
    * @throws {Error} If the playlist is not found.
    */
-  const addSongToPlaylist = (playlistName, song) => {};
+  const addSongToPlaylist = (playlistName, song) => {
+
+  };
 
   /**
    * Removes a song from a specific playlist.
