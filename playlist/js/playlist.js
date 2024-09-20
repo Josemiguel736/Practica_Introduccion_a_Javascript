@@ -114,12 +114,6 @@ const musicCatalog = () => {
           }})
     }
 
-
-      
-       
-            
-
-
   /**
    * Sorts songs in a specific playlist by a given criterion (title, artist, or duration).
    * @param {string} playlistName - The name of the playlist to sort songs in.
@@ -128,8 +122,8 @@ const musicCatalog = () => {
    * @throws {Error} If the playlist is not found or the criterion is invalid.
    */
   const sortSongs = (playlistName, criterion) => {
-    
-  };
+    }
+
 
   return { createPlaylist, addSongToPlaylist, removeSongFromPlaylist, sortSongs, getAllPlaylists, removePlaylist, favoriteSong };
 };
