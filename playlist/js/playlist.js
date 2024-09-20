@@ -44,8 +44,8 @@ const musicCatalog = () => {
    * @param {string} playlistName - The name of the playlist to remove.
    */
     const removePlaylist = (playlistName) => {
-      playlists = playlists.filter( function(playlist){playlist.name != playlistName
-      })
+      playlists = playlists.filter( playlist=> playlist.name != playlistName
+      )
    
     };
 
